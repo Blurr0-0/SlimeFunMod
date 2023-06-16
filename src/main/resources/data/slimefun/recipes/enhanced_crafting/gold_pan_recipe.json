@@ -1,0 +1,15 @@
+{
+  "type": "slimefun:enhanced_crafting_shaped",
+  "pattern": [
+    "x x",
+    " x "
+  ],
+  "key": {
+    "x": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "result": {
+    "item": "slimefun:gold_pan"
+  }
+}

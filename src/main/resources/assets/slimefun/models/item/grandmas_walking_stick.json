@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "slimefun:item/grandmas_walking_stick"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "slimefun:alloying",
+  "ingredients": [
+    {
+      "item": "minecraft:stone"
+    },
+    {
+      "item": "minecraft:cobblestone"
+    }
+  ],
+  "result": {
+    "item": "minecraft:blackstone_slab",
+    "count": 1
+  }
+}

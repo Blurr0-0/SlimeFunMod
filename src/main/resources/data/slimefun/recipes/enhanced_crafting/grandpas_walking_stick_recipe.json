@@ -1,0 +1,18 @@
+{
+  "type": "slimefun:enhanced_crafting_shaped",
+  "pattern": [
+    "x",
+    "y"
+  ],
+  "key": {
+    "x": {
+      "item": "minecraft:gold_nugget"
+    },
+    "y": {
+      "item": "slimefun:grandmas_walking_stick"
+    }
+  },
+  "result": {
+    "item": "slimefun:grandpas_walking_stick"
+  }
+}

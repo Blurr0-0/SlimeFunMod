@@ -1,0 +1,16 @@
+{
+  "type": "slimefun:enhanced_crafting_shaped",
+  "pattern": [
+    "x",
+    "x",
+    "x"
+  ],
+  "key": {
+    "x": {
+      "item": "minecraft:oak_log"
+    }
+  },
+  "result": {
+    "item": "slimefun:grandmas_walking_stick"
+  }
+}

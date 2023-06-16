@@ -1,0 +1,15 @@
+{
+  "type": "slimefun:enhanced_crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:book"
+    },
+    {
+      "item": "minecraft:crafting_table"
+    }
+  ],
+  "result": {
+    "item": "slimefun:portable_crafter",
+    "count": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "x",
+    "y"
+  ],
+  "key": {
+    "x": {
+      "item": "minecraft:crafting_table"
+    },
+    "y": {
+      "item": "minecraft:dispenser"
+    }
+  },
+  "result": {
+    "item": "slimefun:enhanced_crafting_table"
+  }
+}
