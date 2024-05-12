@@ -99,10 +99,10 @@ public class ShapelessEnhancedCraftingRecipe implements EnhancedCraftingRecipe {
     }
 
 
-        public static class Serializer implements RecipeSerializer<ShapelessEnhancedCraftingRecipe> {
+    public static class Serializer implements RecipeSerializer<ShapelessEnhancedCraftingRecipe> {
 
-            public static final Serializer INSTANCE = new Serializer();
-            public static final ResourceLocation ID = new ResourceLocation(SlimeFun.MOD_ID, "enhanced_crafting_shapeless");
+        public static final Serializer INSTANCE = new Serializer();
+        public static final ResourceLocation ID = new ResourceLocation(SlimeFun.MOD_ID, "enhanced_crafting_shapeless");
 
         public ShapelessEnhancedCraftingRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
             String s = GsonHelper.getAsString(pJson, "group", "");
@@ -154,24 +154,24 @@ public class ShapelessEnhancedCraftingRecipe implements EnhancedCraftingRecipe {
             pBuffer.writeItem(pRecipe.result);
         }
 
-            @Override
-            public RecipeSerializer<?> setRegistryName(ResourceLocation name) {
-                return INSTANCE;
-            }
-
-            @Nullable
-            @Override
-            public ResourceLocation getRegistryName() {
-                return ID;
-            }
-
-            @Override
-            public Class<RecipeSerializer<?>> getRegistryType() {
-                return ShapelessEnhancedCraftingRecipe.Serializer.castClass(RecipeSerializer.class);
-            }
-
-            static <G> Class<G> castClass(Class<?> cls) {
-                return (Class<G>) cls;
-            }
+        @Override
+        public RecipeSerializer<?> setRegistryName(ResourceLocation name) {
+            return INSTANCE;
         }
+
+        @Nullable
+        @Override
+        public ResourceLocation getRegistryName() {
+            return ID;
+        }
+
+        @Override
+        public Class<RecipeSerializer<?>> getRegistryType() {
+            return ShapelessEnhancedCraftingRecipe.Serializer.castClass(RecipeSerializer.class);
+        }
+
+        static <G> Class<G> castClass(Class<?> cls) {
+            return (Class<G>) cls;
+        }
+    }
 }

@@ -60,6 +60,7 @@ public class OrganicFoodRecipe extends ModCustomRecipe {
 
         ItemStack organicFood = new ItemStack(ModItems.ORGANIC_FOOD.get(), 2);
         IOrganicFood.Content(organicFood, foodItem);
+
         return organicFood;
     }
 

@@ -5,10 +5,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.PotionItem;
-import net.minecraft.world.item.Tiers;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -259,6 +256,15 @@ public class ModItems {
                     .stacksTo(1)
                     .durability(512)
                     .tab(ModCreativeModeTab.TOOLS)));
+
+
+    public static final RegistryObject<Item> SMELTERS_PICKAXE = ITEMS.register("smelters_pickaxe",
+            () -> new PickaxeItem(Tiers.IRON, 1, -2.8F, (new Item.Properties())
+                    .tab(CreativeModeTab.TAB_TOOLS)));
+
+    public static final RegistryObject<Item> LUMBER_AXE = ITEMS.register("lumber_axe",
+            () -> new AxeItem(Tiers.IRON, 6.0F, -3.1F, (new Item.Properties())
+                    .tab(CreativeModeTab.TAB_TOOLS)));
 
     public static final RegistryObject<Item> GRANDMAS_WALKING_STICK = ITEMS.register("grandmas_walking_stick",
             () -> new GrandmasWalkingStick(new Item.Properties()

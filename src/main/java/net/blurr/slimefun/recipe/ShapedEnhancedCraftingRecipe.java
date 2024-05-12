@@ -6,6 +6,7 @@ import java.util.Set;
 
 import net.blurr.slimefun.SlimeFun;
 import net.blurr.slimefun.screen.EnhancedCraftingTableMenu;
+import net.minecraftforge.common.ForgeHooks;
 import org.jetbrains.annotations.Nullable;
 
 import com.google.common.annotations.VisibleForTesting;
@@ -31,7 +32,7 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 
-public class ShapedEnhancedCraftingRecipe implements EnhancedCraftingRecipe, Recipe<CraftingContainer> {
+public class ShapedEnhancedCraftingRecipe implements EnhancedCraftingRecipe {
 
     public final int width;
     public final int height;

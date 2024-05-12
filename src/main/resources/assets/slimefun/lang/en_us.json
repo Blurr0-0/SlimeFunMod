@@ -93,6 +93,8 @@
 
   "tape_measure.error": "§a§lSlimefun§r§7> §cyou need to set an anchor before you can start to measure!",
   "tape_measure.set_anchor": "§a§lSlimefun§r§7> §aSuccessfully set the anchor: ",
-  "tape_measure.measurement_taken": "§a§lSlimefun§r§7> Measurement taken. §eDistance: "
+  "tape_measure.measurement_taken": "§a§lSlimefun§r§7> Measurement taken. §eDistance: ",
+  "organic_food.contents": "Contents:"
+
 
 }

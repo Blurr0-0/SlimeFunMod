@@ -2,8 +2,7 @@ package net.blurr.slimefun.screen;
 
 import net.blurr.slimefun.block.ModBlocks;
 import net.blurr.slimefun.recipe.EnhancedCraftingRecipe;
-import net.blurr.slimefun.recipe.ShapelessEnhancedCraftingRecipe;
-import net.blurr.slimefun.recipe.ModRecipes;
+import net.blurr.slimefun.screen.slot.ModResultSlot;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.protocol.game.ClientboundContainerSetSlotPacket;
 import net.minecraft.server.level.ServerPlayer;
@@ -13,11 +12,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.CraftingRecipe;
 import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 
 import java.util.Optional;
 
@@ -41,7 +37,7 @@ public class EnhancedCraftingTableMenu extends RecipeBookMenu<CraftingContainer>
         super(ModMenuTypes.ENHANCED_CRAFTING_TABLE_MENU.get(), t);
         this.access = pAccess;
         this.player = pInv.player;
-        this.addSlot(new ResultSlot(pInv.player, this.craftSlots, this.resultSlots, 0, 124, 35));
+        this.addSlot(new ModResultSlot(pInv.player, this.craftSlots, this.resultSlots, 0, 124, 35));
 
         for(int i = 0; i < 3; ++i) {
             for(int j = 0; j < 3; ++j) {
@@ -58,9 +54,7 @@ public class EnhancedCraftingTableMenu extends RecipeBookMenu<CraftingContainer>
         for(int l = 0; l < 9; ++l) {
             this.addSlot(new Slot(pInv, l, 8 + l * 18, 142));
         }
-
     }
-
     protected static void slotChangedCraftingGrid(AbstractContainerMenu pMenu, Level pLevel, Player pPlayer, CraftingContainer pContainer, ResultContainer pResult) {
         if (!pLevel.isClientSide) {
             ServerPlayer serverplayer = (ServerPlayer)pPlayer;

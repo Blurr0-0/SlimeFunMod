@@ -1,7 +1,9 @@
 package net.blurr.slimefun.screen;
 
 import net.blurr.slimefun.SlimeFun;
+import net.minecraft.core.Registry;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.DispenserMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -24,8 +26,6 @@ public class ModMenuTypes {
 
     public static final RegistryObject<MenuType<SmelteryMenu>> SMELTERY_MENU =
             registerMenuType(SmelteryMenu::new, "smeltery_menu");
-
-
 
     private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory,
                                                                                                   String name) {

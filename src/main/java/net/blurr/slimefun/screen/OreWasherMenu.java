@@ -21,10 +21,10 @@ public class OreWasherMenu extends AbstractContainerMenu {
         this(pContainerId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()));
     }
 
-    public OreWasherMenu(int pContainerId, Inventory inv, BlockEntity enity) {
+    public OreWasherMenu(int pContainerId, Inventory inv, BlockEntity entity) {
         super(ModMenuTypes.ORE_WASHER_MENU.get(), pContainerId);
         checkContainerSize(inv, 9);
-        blockEntity = ((OreWasherEntity) enity);
+        blockEntity = ((OreWasherEntity) entity);
         this.level = inv.player.level;
 
 

@@ -19,7 +19,7 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
 
-    //TODO add other 2 recipes to ore washer and crafting recipe for it also texture for it and the enhanced crafting table, make sure every text is translatable
+    //TODO add other 2 recipes to ore washer and crafting recipe for it also texture for it and the enhanced crafting table, make sure every text is translatable, finish block placer
 
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, SlimeFun.MOD_ID);
@@ -42,6 +42,13 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SMELTERY = registerBlock("smeltery",
             () -> new Smeltery(BlockBehaviour.Properties
+                    .of(Material.WOOD)
+                    .strength(3f)
+                    .sound(SoundType.WOOD)),
+            ModCreativeModeTab.BASIC_MACHINES);
+
+    public static final RegistryObject<Block> BLOCK_PLACER = registerBlock("block_placer",
+            () -> new BlockPlacer(BlockBehaviour.Properties
                     .of(Material.WOOD)
                     .strength(3f)
                     .sound(SoundType.WOOD)),

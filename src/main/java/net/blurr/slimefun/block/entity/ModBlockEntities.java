@@ -25,6 +25,11 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(SmelteryEntity::new,
                             ModBlocks.SMELTERY.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<BlockPlacerEntity>> BLOCK_PLACER_ENTITY =
+            BLOCK_ENTITIES.register("block_placer_entity", () ->
+                    BlockEntityType.Builder.of(BlockPlacerEntity::new,
+                            ModBlocks.SMELTERY.get()).build(null));
+
 
 
     public static void register(IEventBus eventBus) {

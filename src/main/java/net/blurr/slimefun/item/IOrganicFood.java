@@ -28,16 +28,19 @@ public interface IOrganicFood {
     String TAG_DISPLAY = "display";
     String DEFAULT_CONTENT = "None";
 
-    static String getContents(ItemStack pStack) {
-        CompoundTag compoundtag = pStack.getTagElement("display");
-        return compoundtag != null && compoundtag.contains("contents", 99) ? compoundtag.getString("contents") : "None";
+    static String getContents(CompoundTag compoundtag) {
+        if (compoundtag != null) {
+            return compoundtag.getString("contents");
+        } else {
+            return "None";
+        }
     }
 
     static void setContents(ItemStack pStack, String contents) {
         pStack.getOrCreateTagElement("display").putString("contents", contents);
     }
     static ItemStack Content(ItemStack pStack, ItemStack pFood) {
-        setContents(pStack, pFood.getItem().getName(pFood).getString());
+        setContents(pStack, pFood.getHoverName().getString());
         return pStack;
     }
 }
