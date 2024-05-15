@@ -1,0 +1,12 @@
+{
+  "type": "slimefun:alloying",
+  "ingredients": [
+    {
+      "item": "slimefun:iron_dust"
+    }
+  ],
+  "result": {
+    "item": "minecraft:iron_ingot",
+    "count": 1
+  }
+}

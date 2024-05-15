@@ -1,0 +1,12 @@
+{
+  "type": "slimefun:alloying",
+  "ingredients": [
+    {
+      "item": "slimefun:lead_dust"
+    }
+  ],
+  "result": {
+    "item": "slimefun:lead_ingot",
+    "count": 1
+  }
+}

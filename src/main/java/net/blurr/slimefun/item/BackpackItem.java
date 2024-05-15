@@ -31,8 +31,6 @@ import org.jetbrains.annotations.Nullable;
 
 public class BackpackItem extends Item {
 
-    private static final Component CONTAINER_TITLE = new TranslatableComponent("container.backpack");
-
     public int rowAmount;
 
     public BackpackItem(Properties pProperties, int pRowAmount) {
@@ -50,7 +48,7 @@ public class BackpackItem extends Item {
             NetworkHooks.openGui(serverPlayer, new MenuProvider() {
                 @Override
                 public @NotNull Component getDisplayName() {
-                    return new TextComponent(CONTAINER_TITLE.getContents());
+                    return new TextComponent(pPlayer.getItemInHand(pUsedHand).getDisplayName().getString().replace("[", "").replace("]", ""));
                 }
 
                 @Override
@@ -78,7 +76,7 @@ public class BackpackItem extends Item {
             NetworkHooks.openGui(serverPlayer, new MenuProvider() {
                 @Override
                 public @NotNull Component getDisplayName() {
-                    return new TextComponent(CONTAINER_TITLE.getContents());
+                    return new TextComponent(pPlayer.getItemInHand(pUsedHand).getDisplayName().getString().replace("[", "").replace("]", ""));
                 }
 
                 @Override

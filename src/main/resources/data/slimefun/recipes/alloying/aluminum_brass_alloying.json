@@ -1,0 +1,18 @@
+{
+  "type": "slimefun:alloying",
+  "ingredients": [
+    {
+      "item": "slimefun:aluminum_dust"
+    },
+    {
+      "item": "slimefun:brass_ingot"
+    },
+    {
+      "item": "slimefun:aluminum_ingot"
+    }
+  ],
+  "result": {
+    "item": "slimefun:aluminum_brass_ingot",
+    "count": 1
+  }
+}

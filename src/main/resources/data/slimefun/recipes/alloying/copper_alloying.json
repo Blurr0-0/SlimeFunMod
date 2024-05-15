@@ -1,0 +1,12 @@
+{
+  "type": "slimefun:alloying",
+  "ingredients": [
+    {
+      "item": "slimefun:copper_dust"
+    }
+  ],
+  "result": {
+    "item": "minecraft:copper_ingot",
+    "count": 1
+  }
+}

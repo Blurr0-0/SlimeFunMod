@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "slimefun:block/smeltery_bottom"
+    },
+    "half=upper": {
+      "model": "slimefun:block/smeltery_top"
+    }
+  }
+}

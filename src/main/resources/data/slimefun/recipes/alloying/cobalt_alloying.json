@@ -1,0 +1,18 @@
+{
+  "type": "slimefun:alloying",
+  "ingredients": [
+    {
+      "item": "slimefun:iron_dust"
+    },
+    {
+      "item": "slimefun:copper_dust"
+    },
+    {
+      "item": "slimefun:nickel_ingot"
+    }
+  ],
+  "result": {
+    "item": "slimefun:cobalt_ingot",
+    "count": 1
+  }
+}

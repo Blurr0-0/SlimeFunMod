@@ -169,16 +169,16 @@ public class SmelteryEntity extends BlockEntity implements MenuProvider {
         BlockPos pPos = entity.getBlockPos().below(1);
         BlockState pState = entity.getLevel().getBlockState(pPos);
         if (pState.getBlock() == Blocks.CAMPFIRE) {
-            maxProgress = 200;
+            maxProgress = 150;
             return pState.getValue(CampfireBlock.LIT);
         } else if (pState.getBlock() == Blocks.SOUL_CAMPFIRE) {
-            maxProgress = 100;
+            maxProgress = 75;
             return pState.getValue(CampfireBlock.LIT);
         }
         return false;
     }
 
-    private static void craftItem(SmelteryEntity entity) {
+    private synchronized static void craftItem(SmelteryEntity entity) {
         BlockPos pPos = entity.getBlockPos().below(1);
         Level level = entity.level;
         SimpleContainer inventory = new SimpleContainer(entity.itemHandler.getSlots());
@@ -202,8 +202,8 @@ public class SmelteryEntity extends BlockEntity implements MenuProvider {
             entity.itemHandler.setStackInSlot(0, new ItemStack(match.get().getResultItem().getItem(),
                     entity.itemHandler.getStackInSlot(0).getCount() + match.get().getResultItem().getCount()));
 
-            if (rand.nextInt(100) < 20) {
-                BlockState pBlockState = level.getBlockState(pPos).cycle(CampfireBlock.LIT);
+            if (rand.nextInt(100) < 15) {
+                BlockState pBlockState = level.getBlockState(pPos).setValue(CampfireBlock.LIT, false);
                 level.setBlock(pPos, pBlockState, 3);
             }
 

@@ -1,0 +1,12 @@
+{
+  "type": "slimefun:alloying",
+  "ingredients": [
+    {
+      "item": "slimefun:silver_dust"
+    }
+  ],
+  "result": {
+    "item": "slimefun:silver_ingot",
+    "count": 1
+  }
+}

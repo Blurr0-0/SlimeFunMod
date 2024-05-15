@@ -1,0 +1,21 @@
+{
+  "type": "slimefun:alloying",
+  "ingredients": [
+    {
+      "item": "slimefun:silver_dust"
+    },
+    {
+      "item": "slimefun:gold_dust"
+    },
+    {
+      "item": "slimefun:copper_dust"
+    },
+    {
+      "item": "slimefun:bronze_ingot"
+    }
+  ],
+  "result": {
+    "item": "slimefun:corinthian_bronze_ingot",
+    "count": 1
+  }
+}

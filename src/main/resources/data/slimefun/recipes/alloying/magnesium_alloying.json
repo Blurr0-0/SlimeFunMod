@@ -1,0 +1,12 @@
+{
+  "type": "slimefun:alloying",
+  "ingredients": [
+    {
+      "item": "slimefun:magnesium_dust"
+    }
+  ],
+  "result": {
+    "item": "slimefun:magnesium_ingot",
+    "count": 1
+  }
+}
