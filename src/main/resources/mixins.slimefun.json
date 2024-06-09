@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "net.blurr.slimefun.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "EnchantMenuMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "mixins.slimefun-refmap.json"
+}

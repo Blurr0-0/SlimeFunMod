@@ -65,7 +65,7 @@ minecraft {
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', 'slimefun'
-
+            arg "-mixin.config=mixins.slimefun.json"
             mods {
                 slimefun {
                     source sourceSets.main
@@ -180,9 +180,15 @@ jar {
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "slimefunsareus",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
+                "TweakOrder": 0,
+                "MixinConfigs" : "mixins.slimefun.json"
         ])
     }
+
+    rename 'mixin.refmap.json', 'mixins.slimefun-refmap.json'
+
 }
 
 // Example configuration to allow publishing using the maven-publish plugin

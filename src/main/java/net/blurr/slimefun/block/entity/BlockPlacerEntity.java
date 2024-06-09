@@ -15,6 +15,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.DispenserMenu;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
@@ -60,7 +61,7 @@ public class BlockPlacerEntity extends RandomizableContainerBlockEntity implemen
         int j = 1;
 
         for(int k = 0; k < this.items.size(); ++k) {
-            if (!this.items.get(k).isEmpty() && RANDOM.nextInt(j++) == 0) {
+            if ((this.items.get(k).getItem() instanceof BlockItem) && RANDOM.nextInt(j++) == 0) {
                 i = k;
             }
         }

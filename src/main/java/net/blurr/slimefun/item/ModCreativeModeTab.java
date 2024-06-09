@@ -55,4 +55,11 @@ public class ModCreativeModeTab {
         }
     };
 
+    public static final CreativeModeTab T1_TALISMANS = new CreativeModeTab("t1_talismans") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(ModItems.BRASS_INGOT.get());
+        }
+    };
+
 }

@@ -20,7 +20,7 @@ public class ModItems {
     public static final FoodProperties MAGIC_SUGAR_FOOD = (new FoodProperties.Builder()).nutrition(1).saturationMod(0).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 600, 4), 1).build();
     public static final FoodProperties MONSTER_JERKY_FOOD = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.8F).effect(new MobEffectInstance(MobEffects.SATURATION, 5, 0), 1).build();
 
-    //TODO add tab for sifted ore and for stone chunk, add cooler when juice is finished, finish backpack(make it say the items on the inside)
+    //TODO add tab for sifted ore and for stone chunk, add cooler when juice is finished, finish backpack(make it say the items on the inside + fix duping glitch)
 
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, SlimeFun.MOD_ID);
@@ -288,6 +288,10 @@ public class ModItems {
                     .durability(1032)
                     .tab(ModCreativeModeTab.WEAPONS)));
 
+    public static final RegistryObject<Item> SEISMIC_AXE = ITEMS.register("seismic_axe",
+            () -> new SeismicAxeItem(new Item.Properties()
+                    .tab(ModCreativeModeTab.WEAPONS)));
+
     public static final RegistryObject<Item> PORTABLE_CRAFTER = ITEMS.register("portable_crafter",
             () -> new PortableCrafter(new Item.Properties()
                     .stacksTo(1)
@@ -420,12 +424,69 @@ public class ModItems {
             () -> new JuiceItem(new Item.Properties()
                     .tab(ModCreativeModeTab.FOOD), 3, 0.4F,  new MobEffectInstance(MobEffects.ABSORPTION, 400, 0)));
 
+    public static final RegistryObject<Item> ANVIL_TALISMAN = ITEMS.register("anvil_talisman",
+            () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.T1_TALISMANS)));
 
+    public static final RegistryObject<Item> MINER_TALISMAN = ITEMS.register("miner_talisman",
+            () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.T1_TALISMANS)));
 
+    public static final RegistryObject<Item> FARMER_TALISMAN = ITEMS.register("farmer_talisman",
+            () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.T1_TALISMANS)));
 
+    public static final RegistryObject<Item> HUNTER_TALISMAN = ITEMS.register("hunter_talisman",
+            () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.T1_TALISMANS)));
 
+    public static final RegistryObject<Item> LAVA_WALKER_TALISMAN = ITEMS.register("lava_walker_talisman",
+            () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.T1_TALISMANS)));
 
+    public static final RegistryObject<Item> WATER_BREATHER_TALISMAN = ITEMS.register("water_breather_talisman",
+            () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.T1_TALISMANS)));
 
+    public static final RegistryObject<Item> ANGEL_TALISMAN = ITEMS.register("angel_talisman",
+            () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.T1_TALISMANS)));
+
+    public static final RegistryObject<Item> FIREFIGHTER_TALISMAN = ITEMS.register("firefighter_talisman",
+            () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.T1_TALISMANS)));
+
+    public static final RegistryObject<Item> MAGICIAN_TALISMAN = ITEMS.register("magician_talisman",
+            () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.T1_TALISMANS)));
+
+    public static final RegistryObject<Item> TRAVELLER_TALISMAN = ITEMS.register("traveller_talisman",
+            () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.T1_TALISMANS)));
+
+    public static final RegistryObject<Item> WARRIOR_TALISMAN = ITEMS.register("warrior_talisman",
+            () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.T1_TALISMANS)));
+
+    public static final RegistryObject<Item> KNIGHT_TALISMAN = ITEMS.register("knight_talisman",
+            () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.T1_TALISMANS)));
+
+    public static final RegistryObject<Item> CAVEMAN_TALISMAN = ITEMS.register("caveman_talisman",
+            () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.T1_TALISMANS)));
+
+    public static final RegistryObject<Item> WISE_TALISMAN = ITEMS.register("wise_talisman",
+            () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.T1_TALISMANS)));
+
+    public static final RegistryObject<Item> WHIRLWIND_TALISMAN = ITEMS.register("whirlwind_talisman",
+            () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.T1_TALISMANS)));
+
+    public static final RegistryObject<Item> WIZARD_TALISMAN = ITEMS.register("wizard_talisman",
+            () -> new Item(new Item.Properties()
+                    .tab(ModCreativeModeTab.T1_TALISMANS)));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

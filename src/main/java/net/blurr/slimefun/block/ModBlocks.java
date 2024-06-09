@@ -19,7 +19,7 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
 
-    //TODO add other 2 recipes to ore washer and crafting recipe for it also texture for it and the enhanced crafting table, make sure every text is translatable, finish block placer
+    //TODO add other 2 recipes to ore washer and crafting recipe for it also texture for it and the enhanced crafting table, make sure every text is translatable, finish block placer, add enhanced furnace item description prolly also to other blockitems too
 
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, SlimeFun.MOD_ID);
@@ -42,6 +42,90 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SMELTERY = registerBlock("smeltery",
             () -> new Smeltery(BlockBehaviour.Properties
+                    .of(Material.WOOD)
+                    .strength(3f)
+                    .sound(SoundType.WOOD)),
+            ModCreativeModeTab.BASIC_MACHINES);
+
+    public static final RegistryObject<Block> I_ENHANCED_FURNACE = registerBlock("i_enhanced_furnace",
+            () -> new EnhancedFurnace(2, 1 , 1, BlockBehaviour.Properties
+                    .of(Material.WOOD)
+                    .strength(3f)
+                    .sound(SoundType.WOOD)),
+            ModCreativeModeTab.BASIC_MACHINES);
+
+    public static final RegistryObject<Block> II_ENHANCED_FURNACE = registerBlock("ii_enhanced_furnace",
+            () -> new EnhancedFurnace(2, 2 , 1, BlockBehaviour.Properties
+                    .of(Material.WOOD)
+                    .strength(3f)
+                    .sound(SoundType.WOOD)),
+            ModCreativeModeTab.BASIC_MACHINES);
+
+    public static final RegistryObject<Block> III_ENHANCED_FURNACE = registerBlock("iii_enhanced_furnace",
+            () -> new EnhancedFurnace(3, 2 , 1, BlockBehaviour.Properties
+                    .of(Material.WOOD)
+                    .strength(3f)
+                    .sound(SoundType.WOOD)),
+            ModCreativeModeTab.BASIC_MACHINES);
+
+    public static final RegistryObject<Block> IV_ENHANCED_FURNACE = registerBlock("iv_enhanced_furnace",
+            () -> new EnhancedFurnace(3, 2 , 2, BlockBehaviour.Properties
+                    .of(Material.WOOD)
+                    .strength(3f)
+                    .sound(SoundType.WOOD)),
+            ModCreativeModeTab.BASIC_MACHINES);
+
+    public static final RegistryObject<Block> V_ENHANCED_FURNACE = registerBlock("v_enhanced_furnace",
+            () -> new EnhancedFurnace(3, 3 , 2, BlockBehaviour.Properties
+                    .of(Material.WOOD)
+                    .strength(3f)
+                    .sound(SoundType.WOOD)),
+            ModCreativeModeTab.BASIC_MACHINES);
+
+    public static final RegistryObject<Block> VI_ENHANCED_FURNACE = registerBlock("vi_enhanced_furnace",
+            () -> new EnhancedFurnace(4, 3 , 2, BlockBehaviour.Properties
+                    .of(Material.WOOD)
+                    .strength(3f)
+                    .sound(SoundType.WOOD)),
+            ModCreativeModeTab.BASIC_MACHINES);
+
+    public static final RegistryObject<Block> VII_ENHANCED_FURNACE = registerBlock("vii_enhanced_furnace",
+            () -> new EnhancedFurnace(4, 4 , 2, BlockBehaviour.Properties
+                    .of(Material.WOOD)
+                    .strength(3f)
+                    .sound(SoundType.WOOD)),
+            ModCreativeModeTab.BASIC_MACHINES);
+
+    public static final RegistryObject<Block> VIII_ENHANCED_FURNACE = registerBlock("viii_enhanced_furnace",
+            () -> new EnhancedFurnace(5, 4 , 2, BlockBehaviour.Properties
+                    .of(Material.WOOD)
+                    .strength(3f)
+                    .sound(SoundType.WOOD)),
+            ModCreativeModeTab.BASIC_MACHINES);
+
+    public static final RegistryObject<Block> IX_ENHANCED_FURNACE = registerBlock("ix_enhanced_furnace",
+            () -> new EnhancedFurnace(5, 5 , 2, BlockBehaviour.Properties
+                    .of(Material.WOOD)
+                    .strength(3f)
+                    .sound(SoundType.WOOD)),
+            ModCreativeModeTab.BASIC_MACHINES);
+
+    public static final RegistryObject<Block> X_ENHANCED_FURNACE = registerBlock("x_enhanced_furnace",
+            () -> new EnhancedFurnace(5, 5 , 3, BlockBehaviour.Properties
+                    .of(Material.WOOD)
+                    .strength(3f)
+                    .sound(SoundType.WOOD)),
+            ModCreativeModeTab.BASIC_MACHINES);
+
+    public static final RegistryObject<Block> REINFORCED_FURNACE = registerBlock("reinforced_furnace",
+            () -> new EnhancedFurnace(10, 10 , 3, BlockBehaviour.Properties
+                    .of(Material.WOOD)
+                    .strength(3f)
+                    .sound(SoundType.WOOD)),
+            ModCreativeModeTab.BASIC_MACHINES);
+
+    public static final RegistryObject<Block> CARBONADO_EDGED_FURNACE = registerBlock("carbonado_edged_furnace",
+            () -> new EnhancedFurnace(20, 10 , 3, BlockBehaviour.Properties
                     .of(Material.WOOD)
                     .strength(3f)
                     .sound(SoundType.WOOD)),

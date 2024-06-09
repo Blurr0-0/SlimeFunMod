@@ -1,10 +1,94 @@
 {
   "variants": {
-    "half=lower": {
+    "facing=east,half=lower,lit=off": {
+      "model": "slimefun:block/smeltery_bottom",
+      "y": 90
+    },
+    "facing=east,half=upper,lit=off": {
+      "model": "slimefun:block/smeltery_top",
+      "y": 90
+    },
+    "facing=north,half=lower,lit=off": {
       "model": "slimefun:block/smeltery_bottom"
     },
-    "half=upper": {
+    "facing=north,half=upper,lit=off": {
       "model": "slimefun:block/smeltery_top"
+    },
+    "facing=south,half=lower,lit=off": {
+      "model": "slimefun:block/smeltery_bottom",
+      "y": 180
+    },
+    "facing=south,half=upper,lit=off": {
+      "model": "slimefun:block/smeltery_top",
+      "y": 180
+    },
+    "facing=west,half=lower,lit=off": {
+      "model": "slimefun:block/smeltery_bottom",
+      "y": 270
+    },
+    "facing=west,half=upper,lit=off": {
+      "model": "slimefun:block/smeltery_top",
+      "y": 270
+    },
+    "facing=east,half=lower,lit=fire": {
+      "model": "slimefun:block/smeltery_bottom_fire",
+      "y": 90
+    },
+    "facing=east,half=upper,lit=fire": {
+      "model": "slimefun:block/smeltery_top_fire",
+      "y": 90
+    },
+    "facing=north,half=lower,lit=fire": {
+      "model": "slimefun:block/smeltery_bottom_fire"
+    },
+    "facing=north,half=upper,lit=fire": {
+      "model": "slimefun:block/smeltery_top_fire"
+    },
+    "facing=south,half=lower,lit=fire": {
+      "model": "slimefun:block/smeltery_bottom_fire",
+      "y": 180
+    },
+    "facing=south,half=upper,lit=fire": {
+      "model": "slimefun:block/smeltery_top_fire",
+      "y": 180
+    },
+    "facing=west,half=lower,lit=fire": {
+      "model": "slimefun:block/smeltery_bottom_fire",
+      "y": 270
+    },
+    "facing=west,half=upper,lit=fire": {
+      "model": "slimefun:block/smeltery_top_fire",
+      "y": 270
+    },
+    "facing=east,half=lower,lit=soulfire": {
+      "model": "slimefun:block/smeltery_bottom_soulfire",
+      "y": 90
+    },
+    "facing=east,half=upper,lit=soulfire": {
+      "model": "slimefun:block/smeltery_top_soulfire",
+      "y": 90
+    },
+    "facing=north,half=lower,lit=soulfire": {
+      "model": "slimefun:block/smeltery_bottom_soulfire"
+    },
+    "facing=north,half=upper,lit=soulfire": {
+      "model": "slimefun:block/smeltery_top_soulfire"
+    },
+    "facing=south,half=lower,lit=soulfire": {
+      "model": "slimefun:block/smeltery_bottom_soulfire",
+      "y": 180
+    },
+    "facing=south,half=upper,lit=soulfire": {
+      "model": "slimefun:block/smeltery_top_soulfire",
+      "y": 180
+    },
+    "facing=west,half=lower,lit=soulfire": {
+      "model": "slimefun:block/smeltery_bottom_soulfire",
+      "y": 270
+    },
+    "facing=west,half=upper,lit=soulfire": {
+      "model": "slimefun:block/smeltery_top_soulfire",
+      "y": 270
     }
   }
 }

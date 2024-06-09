@@ -17,6 +17,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -75,19 +76,28 @@ public class BlockPlacer extends BaseEntityBlock {
         return InteractionResult.sidedSuccess(pLevel.isClientSide());
     }
 
+    //todo add the ability to place blocks with storage like shulker boxes without the items inside disappearing
+
     protected void dispenseFrom(ServerLevel pLevel, BlockPos pPos) {
         BlockSourceImpl blocksourceimpl = new BlockSourceImpl(pLevel, pPos);
         BlockPlacerEntity BlockPlacerEntity = blocksourceimpl.getEntity();
+        BlockState pState = pLevel.getBlockState(pPos);
         int i = BlockPlacerEntity.getRandomSlot();
         if (i < 0) {
             pLevel.levelEvent(1001, pPos, 0);
             pLevel.gameEvent(GameEvent.DISPENSE_FAIL, pPos);
         } else {
             ItemStack itemstack = BlockPlacerEntity.getItem(i);
-            DispenseItemBehavior dispenseitembehavior = this.getDispenseMethod(itemstack);
-            if (dispenseitembehavior != DispenseItemBehavior.NOOP) {
-                BlockPlacerEntity.setItem(i, dispenseitembehavior.dispense(blocksourceimpl, itemstack));
+            BlockPos relativePos = pPos.relative(pState.getValue(FACING).getOpposite().getOpposite());
+            if (itemstack.getItem() instanceof BlockItem blockItem && (pLevel.getBlockState(relativePos).isAir() || (pLevel.getBlockState(relativePos).getMaterial().isReplaceable() && pLevel.getBlockState(relativePos).getBlock() != blockItem.getBlock()))) {
+                pLevel.setBlock(relativePos, blockItem.getBlock().defaultBlockState(), 3);
+                itemstack.shrink(1);
+                BlockPlacerEntity.setItem(i, itemstack);
             }
+//            DispenseItemBehavior dispenseitembehavior = this.getDispenseMethod(itemstack);
+//            if (dispenseitembehavior != DispenseItemBehavior.NOOP) {
+//                BlockPlacerEntity.setItem(i, dispenseitembehavior.dispense(blocksourceimpl, itemstack));
+//            }
 
         }
     }

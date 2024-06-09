@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.blurr.slimefun.block.ModBlocks;
 import net.blurr.slimefun.block.entity.ModBlockEntities;
 import net.blurr.slimefun.item.ModItems;
+import net.blurr.slimefun.particle.ModParticles;
 import net.blurr.slimefun.recipe.ModRecipes;
 import net.blurr.slimefun.screen.*;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -17,6 +18,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import org.spongepowered.asm.launch.MixinBootstrap;
+import org.spongepowered.asm.mixin.MixinEnvironment;
+import org.spongepowered.asm.mixin.Mixins;
 
 
 @Mod(SlimeFun.MOD_ID)
@@ -36,6 +40,7 @@ public class SlimeFun
         ModBlockEntities.register(eventBus);
         ModMenuTypes.register(eventBus);
         ModRecipes.register(eventBus);
+        ModParticles.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
@@ -54,34 +59,10 @@ public class SlimeFun
 
     private void setup(final FMLCommonSetupEvent event)
     {
-
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        MixinBootstrap.init();
+        Mixins.addConfiguration("mixins.slimefun.json");
+        MixinEnvironment.getDefaultEnvironment();
     }
-
-//    @SubscribeEvent
-//    public void onRenderWorldLast(RenderLevelStageEvent event) {
-//        if(event.getStage() == RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS){
-//            Minecraft mc = Minecraft.getInstance();
-//            Entity entity = mc.cameraEntity;
-//            if (entity == null) return;
-//            if (entity instanceof Player player) {
-//                PoseStack matrixStack = event.getPoseStack();
-//                VoxelShape FULL_BLOCK = Shapes.box(0, 0, 0, 1, 1, 1);
-//                RenderSystem.setShader(GameRenderer::getPositionColorShader);
-//                RenderSystem.enableBlend();
-//                RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
-//                RenderSystem.disableCull();
-//                RenderSystem.depthMask(false);
-//                LumberAxeEvent.drawOutlineBoxes(Tesselator.getInstance(), matrixStack, Tesselator.getInstance().getBuilder(), getCameraOffset(new Vector3d(player.getLookAngle().x, player.getLookAngle().y, player.getLookAngle().z), player.getOnPos()), new Color(255, 0, 0, 255), FULL_BLOCK);
-//            }
-//        }
-//    }
-
-//    public Vector3d getCameraOffset(Vector3d camera, BlockPos pos) {
-//        double xDif = (double) pos.getX() - camera.x;
-//        double yDif = (double) pos.getY() - camera.y;
-//        double zDif = (double) pos.getZ() - camera.z;
-//        return new Vector3d(xDif, yDif, zDif);
-//    }
 }

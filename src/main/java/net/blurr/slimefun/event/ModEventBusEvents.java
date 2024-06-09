@@ -2,14 +2,17 @@ package net.blurr.slimefun.event;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.blurr.slimefun.SlimeFun;
+import net.blurr.slimefun.particle.ModParticles;
 import net.blurr.slimefun.recipe.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.particle.LavaParticle;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.client.event.RenderLevelStageEvent;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.event.RegistryEvent;
@@ -37,6 +40,11 @@ public class ModEventBusEvents {
         Registry.register(Registry.RECIPE_TYPE, ShapelessEnhancedCraftingRecipe.Type.ID, EnhancedCraftingRecipe.Type.INSTANCE);
         Registry.register(Registry.RECIPE_TYPE, OrganicFoodRecipe.Type.ID, EnhancedCraftingRecipe.Type.INSTANCE);
         Registry.register(Registry.RECIPE_TYPE, AlloyingRecipe.Type.ID, AlloyingRecipe.Type.INSTANCE);
+    }
+
+    @SubscribeEvent
+    public static void registerParticleFactories(final ParticleFactoryRegisterEvent event) {
+        Minecraft.getInstance().particleEngine.register(ModParticles.SOUL_LAVA.get(), LavaParticle.Provider::new);
     }
 
 }

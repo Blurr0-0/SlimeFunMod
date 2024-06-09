@@ -1,37 +1,28 @@
 package net.blurr.slimefun.block.entity;
 
-import io.netty.util.internal.ThreadLocalRandom;
-import net.blurr.slimefun.item.ModItems;
+import net.blurr.slimefun.block.Smeltery;
+import net.blurr.slimefun.block.state.properties.Lit;
 import net.blurr.slimefun.recipe.AlloyingRecipe;
-import net.blurr.slimefun.screen.OreWasherMenu;
 import net.blurr.slimefun.screen.SmelteryMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.SmeltingRecipe;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -140,6 +131,9 @@ public class SmelteryEntity extends BlockEntity implements MenuProvider {
     }
 
     public static void tick(Level pLevel, BlockPos pPos, BlockState pState, SmelteryEntity pBlockEntity) {
+        pState = pState.setValue(Smeltery.LIT, getLitType(pBlockEntity));
+        pLevel.setBlock(pPos.above(), pState.setValue(Smeltery.HALF, DoubleBlockHalf.UPPER), 3);
+        pLevel.setBlock(pPos, pState, 3);
         if(hasRecipe(pBlockEntity)) {
             pBlockEntity.progress++;
             setChanged(pLevel, pPos, pState);
@@ -176,6 +170,17 @@ public class SmelteryEntity extends BlockEntity implements MenuProvider {
             return pState.getValue(CampfireBlock.LIT);
         }
         return false;
+    }
+
+    private static Lit getLitType(SmelteryEntity entity) {
+        BlockPos pPos = entity.getBlockPos().below(1);
+        BlockState pState = entity.getLevel().getBlockState(pPos);
+        if (pState.getBlock() == Blocks.CAMPFIRE && pState.getValue(CampfireBlock.LIT)) {
+            return Lit.FIRE;
+        } else if (pState.getBlock() == Blocks.SOUL_CAMPFIRE && pState.getValue(CampfireBlock.LIT)) {
+            return Lit.SOULFIRE;
+        }
+        return Lit.OFF;
     }
 
     private synchronized static void craftItem(SmelteryEntity entity) {

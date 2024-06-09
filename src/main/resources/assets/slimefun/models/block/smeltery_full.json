@@ -1,0 +1,8 @@
+{
+  "loader": "forge:obj",
+  "textures": {
+    "particle": "minecraft:block/bricks"
+  },
+  "model": "slimefun:models/block/smeltery_full.obj",
+  "flip-v": true
+}

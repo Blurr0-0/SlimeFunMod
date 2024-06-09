@@ -1,6 +1,6 @@
 # Blender 3.4.1
 # www.blender.org
-mtllib smeltery.mtl
+mtllib smeltery_fire.mtl
 o cube
 v 1.000000 1.000000 1.000000
 v 1.000000 1.000000 -0.000000
